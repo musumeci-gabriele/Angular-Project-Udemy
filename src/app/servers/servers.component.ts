@@ -1,4 +1,4 @@
-import { style } from '@angular/animations';
+// import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,10 +13,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './servers.component.html',
   styleUrls: ['./servers.component.css']
 })
+
 export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No server was created!';
   serverName = '';
+  serverCreated = false;
 
   constructor() {
     setTimeout(() => {
@@ -28,6 +30,7 @@ export class ServersComponent implements OnInit {
   
   //* metodi per i nostri componenti
   onCreateServer(){
+    this.serverCreated = true;
     this.serverCreationStatus = 'Server was created! ' + this.serverName;
   }
 
