@@ -37,6 +37,7 @@ class="btn btn-primary"
 </ng-template>
 
 <hr>
-<app-server></app-server>
-<app-server></app-server>
+<!-- in *ngFor possiamo passare dati dinamici -->
+<app-server *ngFor='let server of servers'></app-server>
+
 
