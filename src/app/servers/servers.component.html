@@ -30,7 +30,11 @@ class="btn btn-primary"
 <!-- <p class="text-danger" [ngStyle]="{color: serverCreationStatus == 'Server was created!' ? 'green' : 'red'}">{{serverCreationStatus}}</p> -->
 
 <!-- <p class="text-danger">{{serverCreationStatus}}</p> -->
-<p *ngIf="serverCreated">Server was created, server name is: {{serverName}}.</p>
+<!-- modo alternativo di inserire una condizione collegata a ng-template -->
+<p *ngIf="serverCreated ; else noServer">Server was created, server name is: {{serverName}}.</p>
+<ng-template #noServer>
+   <p>No Server was created!</p> 
+</ng-template>
 
 <hr>
 <app-server></app-server>
