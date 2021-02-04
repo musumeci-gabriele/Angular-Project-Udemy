@@ -1,0 +1,32 @@
+<label>Servers Works!</label>
+<hr>
+<!-- Metodo 1 -->
+<!-- <input 
+type="text"
+class="form-control"
+(input)="onUpdateServerName($event)"> -->
+<!-- $event : i dati sono estrapolati bidirezioanlmente -->
+
+<!-- Metodo 2 -->
+<input 
+type="text"
+class="form-control"
+[(ngModel)]= "serverName">
+<hr>
+
+<!-- con la proprieta' disabled richiamiamo la funtione di timeout(2sec)riferita ad allowNewServer, associazione di eventi -->
+<button class="btn btn-primary"
+[disabled] = "!allowNewServer"
+(click)="onCreateServer()">Add Server</button>
+<!-- le parentesi tonde abilitano le funzioni js -->
+
+<!-- Sostituzione di interpolazione tra stringhe con il binding per modificare un componente-->
+<!-- <p [innerText] = "allowNewServer"> </p> -->
+<!-- <p class="text-danger" [ngStyle]="{color: serverCreationStatus == 'Server was created!' ? 'green' : 'red'}">{{serverCreationStatus}}</p> -->
+
+<p class="text-danger" [ngClass]="{'green' : serverCreationStatus == 'Server was created!'}">{{serverCreationStatus}}</p>
+
+<hr>
+<app-server></app-server>
+<app-server></app-server>
+
